@@ -1,12 +1,12 @@
 import PropTypes from "prop-types"
 import React from "react"
-import "typeface-patrick-hand-sc"
-
+import Logo from "../components/logo.js"
 
 const Header = ({ siteTitle }) => (
-  <div className="padding-bottom-1em padding-top-1em">
-    <header className="bg-color-springfrost box-shadow margin-auto padding-bottom-1em padding-top-1em skew-20deg text-center width-50pc">
-      <h1 className="skew-neg20deg">
+  <div style={{padding: `1em .5em .5em .5em`}}>
+    <header className="bg-color-springfrost box-shadow" style={{margin: `auto`, maxWidth: `22em`, minWidth: `13em`, padding: `1em 0`, textAlign: `center`, transform: `skew(20deg)`, width: `50%`}}>
+      <div style={{display:`inline-block`, transform:`skew(-20deg)`}}><Logo/></div>
+      <h1 style={{display:`inline-block`, transform:`skew(-20deg)`}}>
         {siteTitle}
       </h1>
     </header>
