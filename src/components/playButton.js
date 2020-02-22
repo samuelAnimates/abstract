@@ -1,6 +1,6 @@
 import React from "react"
 
-const Button = props => (
+const playButton = props => (
 	
 	<button buttonid={ props.buttonId } onClick={ props.onClickFunction }>
 		{ props.text }
@@ -8,4 +8,4 @@ const Button = props => (
 
 );
 
-export default Button;
+export default playButton;

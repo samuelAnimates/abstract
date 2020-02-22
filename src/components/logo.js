@@ -2,7 +2,7 @@ import React from "react"
 class Logo extends React.Component {
     render() {
         return(
-            <div style={{margin:"1em", width:"125px"}}>
+            <div style={{margin:"1em", width:"120px"}}>
                 <svg role="img" alt="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.414 57.353">
                     <title>
                         Abstract Logo
