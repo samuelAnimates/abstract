@@ -1,11 +1,25 @@
-import React from "react"
+import React, {Component} from 'react';
+import "../styles/global.css"
 
-const endPlayButton = props => (
+class EndPlayButton extends Component {
 	
-	<button style={{backgroundColor:`#AD0000`, color:`white`, padding: `1em`}} onClick={ props.onClickFunction }>
-		Click to End This Play.
-	</button>
 
-);
+	ref = React.createRef();
 
-export default endPlayButton;
+	componentDidUpdate(){
+		this.ref.current.focus();
+	}
+
+	render() {
+		return (
+
+			<button ref={ this.ref } playid={ this.props.playid } style={{ padding: `1em` }} className={"endPlayButton"}  onClick={ this.props.onClickFunction }>
+				Click to End This Play.
+			</button>
+
+		)
+	}
+
+};
+
+export default EndPlayButton;

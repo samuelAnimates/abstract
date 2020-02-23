@@ -4,7 +4,6 @@ import ContainerRounded from "../components/containerRounded"
 import ContainerRoundedAssym from "../components/containerRoundedAssym"
 import ContainerRectangle from "../components/containerRectangle"
 import CountdownClock from "../components/countdownClock"
-import EndPlayButton from "../components/endPlayButton"
 import Layout from "../components/layout"
 import Logo from "../components/logo"
 import PlayButton from "../components/playButton"
@@ -16,14 +15,35 @@ import RightParallelogram from "../components/rightParallelogram"
 
 class IndexPage extends Component {
   
-  state = {
-    currentPlayButtonId: "Nothing to see here!",
-    isPlayOnDeck: false,
-    isShowStarted: false,
-    totalTimeSeconds: 20,
-    totalTimeMinutes: 0
-  };
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPlayButtonId: "Nothing to see here!",
+      isPlayOnDeck: false,
+      isShowStarted: false,
+      play01DisplayStyle: "none",
+      totalTimeSeconds: 20,
+      totalTimeMinutes: 0
+    };
+    
+  }
+
+  handleEndPlayButtonClick = event => {
+
+    event.preventDefault();
+    if (this.state.isTimerOn===false){
+      alert("try again");
+    }
+    else{
+      let recentplayid = event.target.attributes.getNamedItem("playid").value
+      this.setState({ isPlayOnDeck: false});
+      this.setState({ currentPlayButtonId: "Nothing to see here!"});
+      if (recentplayid==="play01"){
+        this.setState({ play01DisplayStyle: "none" });
+      }
+    }
+
+  }
 
   handlePlayButtonClick = event => {
     event.preventDefault();
@@ -31,16 +51,16 @@ class IndexPage extends Component {
       alert("try again");
     }
     else{
+
+      let currentplayid = event.target.attributes.getNamedItem("playid").value
       this.setState({ isPlayOnDeck: true});
-      this.setState({ currentPlayButtonId: event.target.attributes.getNamedItem("buttonId").value});
+      this.setState({ currentPlayButtonId: currentplayid });
+      if (currentplayid==="play01"){
+        this.setState({ play01DisplayStyle: "block" });
+      }
+
     }
     
-  }
-
-  handleEndPlayButtonClick = event => {
-    event.preventDefault();
-    this.setState({ isPlayOnDeck: false});
-    this.setState({ currentPlayButtonId: "Nothing to see here!"}); 
   }
 
   handleStartButtonClick = event => {
@@ -110,21 +130,12 @@ class IndexPage extends Component {
                 <StartButton onClickFunction={this.handleStartButtonClick}/>
             </section>
           }
-          { this.state.isPlayOnDeck && <section>
-              <h2 style={{textAlign: `center`, textShadow:`-1.5px -1.5px 0 #acee66, 1.5px -1.5px 0 #acee66, -1.5px 1.5px 0 #acee66, 1.5px 1.5px 0 #acee66`}}>The Stage.</h2>
-                hayy this is play {this.state.currentPlayButtonId}
-                <EndPlayButton onClickFunction={this.handleEndPlayButtonClick} />
-                { this.state.currentPlayButtonId==="play01" &&
-                  <Play01 bgcolor="white" color="black" onClickFunction={this.handleEndPlayButtonClick}/>
-                }
-            </section>
-          }
           <section>
             <h2 style={{textAlign: `center`, textShadow:`-1.5px -1.5px 0 #acee66, 1.5px -1.5px 0 #acee66, -1.5px 1.5px 0 #acee66, 1.5px 1.5px 0 #acee66`}}>The Plays.</h2>
             <div style={{display:`flex`, flexWrap: `wrap`,  justifyContent: `center`}}>
               <ContainerRounded bgcolor="#0000AE" color="white">
                 <p><span style={{fontWeight: `700`, textSize: `2em`}}>#1:</span><br/>The Wave</p>
-                { this.state.isShowStarted && <PlayButton buttonId="play01" onClickFunction={this.handlePlayButtonClick} text="start Play 1"/> }
+                { this.state.isShowStarted && <PlayButton playid="play01" onClickFunction={this.handlePlayButtonClick} text="start Play 1"/> }
               </ContainerRounded>
               <ContainerRectangle bgcolor="#FFCCF7" color="black">
                 <p><span style={{fontWeight: `700`, textSize: `2em`}}>#2:</span><br/>Transmission + Ritual</p>
@@ -151,6 +162,9 @@ class IndexPage extends Component {
                 { this.state.isShowStarted && <PlayButton buttonId="play07" onClickFunction={this.handlePlayButtonClick} text="start Play 7"/> }
               </ContainerRoundedAssym>
             </div>
+          </section>
+          <section>
+            <Play01 displayStyle={ this.state.play01DisplayStyle } bgcolor="white" color="black" playid="play01" onClickEndButton={this.handleEndPlayButtonClick}/>
           </section>
           { this.state.isShowStarted && <CountdownClock totalTimeSeconds={this.state.totalTimeSeconds} totalTimeMinutes={this.state.totalTimeMinutes} /> }
         </main>

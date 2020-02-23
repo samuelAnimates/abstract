@@ -2,7 +2,7 @@ import React from "react"
 
 const playButton = props => (
 	
-	<button buttonid={ props.buttonId } onClick={ props.onClickFunction }>
+	<button playid={ props.playid } onClick={ props.onClickFunction }>
 		{ props.text }
 	</button>
 

@@ -98,3 +98,15 @@ p{
 .box-shadow{
     box-shadow: 15px 10px black;
 }
+.endPlayButton:focus{
+	background-color: red;
+}
+.endPlayButton:active{
+	background-color: red;
+}
+.endPlayButton:hover{
+	background-color: red;
+}
+.endPlayButton{
+	background-color: blue;
+}

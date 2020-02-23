@@ -48,16 +48,16 @@ class countdownClock extends Component {
 					<span>OVER</span>
 				}
 				{ (this.state.clockDisplayMinutes<=9 && 0<this.state.clockDisplaySeconds && this.state.clockDisplaySeconds<10) &&
-					<span>0{this.state.clockDisplayMinutes}:0{this.state.clockDisplaySeconds} TWO</span>
+					<span>0{this.state.clockDisplayMinutes}:0{this.state.clockDisplaySeconds}</span>
 				}
 				{ (this.state.clockDisplayMinutes<=9 && this.state.clockDisplaySeconds>9) &&  
-					<span>0{this.state.clockDisplayMinutes}:{this.state.clockDisplaySeconds} THREE</span>
+					<span>0{this.state.clockDisplayMinutes}:{this.state.clockDisplaySeconds}</span>
 				}
 				{ (this.state.clockDisplayMinutes>9 && this.state.clockDisplaySeconds<=9) &&
-					<span>{this.state.clockDisplayMinutes}:0{this.state.clockDisplaySeconds} FOUR</span>
+					<span>{this.state.clockDisplayMinutes}:0{this.state.clockDisplaySeconds}</span>
 				}
 				{ (this.state.clockDisplayMinutes>9 && this.state.clockDisplaySeconds>9) && 
-					<span>{this.state.clockDisplayMinutes}:{this.state.clockDisplaySeconds} FIVE</span>
+					<span>{this.state.clockDisplayMinutes}:{this.state.clockDisplaySeconds}</span>
 				}				
 			</div>
 	)}
