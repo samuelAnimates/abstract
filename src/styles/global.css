@@ -9,8 +9,7 @@ html{
 } 
 
 body, div, span, applet, object, iframe,
-h4, h5, h6, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+h4, h5, h6, blockquote, pre, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -32,6 +31,17 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
+}
+a{
+	background-color: white;
+	color: blue;
+	font-size: .9em;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 body {
 	line-height: 1;

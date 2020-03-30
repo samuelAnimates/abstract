@@ -28,7 +28,7 @@ class countdownClock extends Component {
 				clockDisplaySeconds: (seconds-1),
 			});
 		}
-		else if (seconds===0 && minutes>0){
+		else if (seconds===0 && minutes>=1){
 			this.setState({
 				clockDisplayMinutes: (minutes-1),
 				clockDisplaySeconds: 59

@@ -21,11 +21,45 @@ class IndexPage extends Component {
       currentPlayButtonId: "Nothing to see here!",
       isPlayOnDeck: false,
       isShowStarted: false,
+      lastKeyPress: "",
       play01DisplayStyle: "none",
-      totalTimeSeconds: 20,
-      totalTimeMinutes: 0
+      play02DisplayStyle: "none",
+      play03DisplayStyle: "none",
+      play04DisplayStyle: "none",
+      play05DisplayStyle: "none",
+      play06DisplayStyle: "none",
+      play07DisplayStyle: "none",
+      play08DisplayStyle: "none",
+      play09DisplayStyle: "none",
+      play10DisplayStyle: "none",
+      play11DisplayStyle: "none",
+      play12DisplayStyle: "none",
+      play13DisplayStyle: "none",
+      play14DisplayStyle: "none",
+      play15DisplayStyle: "none",
+      totalTimeSeconds: 1,
+      totalTimeMinutes: 1,
+      isPlay01Completed: false,
+      isPlay02Completed: false,
+      isPlay03Completed: false,
+      isPlay04Completed: false,
+      isPlay05Completed: false,
+      isPlay06Completed: false,
+      isPlay07Completed: false,
+      isPlay08Completed: false,
+      isPlay09Completed: false,
+      isPlay10Completed: false,
+      isPlay11Completed: false,
+      isPlay12Completed: false,
+      isPlay13Completed: false,
+      isPlay14Completed: false,
+      isPlay15Completed: false
     };
     
+  }
+
+  componentDidUpdate(){
+
   }
 
   handleEndPlayButtonClick = event => {
@@ -40,16 +74,34 @@ class IndexPage extends Component {
       this.setState({ currentPlayButtonId: "Nothing to see here!"});
       if (recentplayid==="play01"){
         this.setState({ play01DisplayStyle: "none" });
+        this.setState({isPlay01Completed: true});
       }
     }
+
+  }
+
+  handleKeyPress = (event) => {
+		
+    
+      if(event.which === 9){
+        console.log("tab")
+      }
+      if(event.which === 27){
+        console.log("esc")
+        if (this.state.isPlayOnDeck){
+          alert(`You can only close the play window via the "Click to End This Play" button.`)
+        }
+      }
+    
 
   }
 
   handlePlayButtonClick = event => {
     event.preventDefault();
     if (this.state.isTimerOn===false){
-      alert("try again");
+      alert("Something's wrong. Pretend everything is fine.");
     }
+
     else{
 
       let currentplayid = event.target.attributes.getNamedItem("playid").value
@@ -57,6 +109,48 @@ class IndexPage extends Component {
       this.setState({ currentPlayButtonId: currentplayid });
       if (currentplayid==="play01"){
         this.setState({ play01DisplayStyle: "block" });
+      }
+      if (currentplayid==="play02"){
+        this.setState({ play02DisplayStyle: "block" });
+      }
+      if (currentplayid==="play03"){
+        this.setState({ play03DisplayStyle: "block" });
+      }
+      if (currentplayid==="play04"){
+        this.setState({ play04DisplayStyle: "block" });
+      }
+      if (currentplayid==="play05"){
+        this.setState({ play05DisplayStyle: "block" });
+      }
+      if (currentplayid==="play06"){
+        this.setState({ play06DisplayStyle: "block" });
+      }
+      if (currentplayid==="play07"){
+        this.setState({ play07DisplayStyle: "block" });
+      }
+      if (currentplayid==="play08"){
+        this.setState({ play08DisplayStyle: "block" });
+      }
+      if (currentplayid==="play09"){
+        this.setState({ play09DisplayStyle: "block" });
+      }
+      if (currentplayid==="play10"){
+        this.setState({ play01DisplayStyle: "block" });
+      }
+      if (currentplayid==="play11"){
+        this.setState({ play11DisplayStyle: "block" });
+      }
+      if (currentplayid==="play12"){
+        this.setState({ play12DisplayStyle: "block" });
+      }
+      if (currentplayid==="play13"){
+        this.setState({ play13DisplayStyle: "block" });
+      }
+      if (currentplayid==="play14"){
+        this.setState({ play14DisplayStyle: "block" });
+      }
+      if (currentplayid==="play15"){
+        this.setState({ play15DisplayStyle: "block" });
       }
 
     }
@@ -66,7 +160,7 @@ class IndexPage extends Component {
   handleStartButtonClick = event => {
     event.preventDefault();
     if (this.state.isShowStarted){
-      alert("Something's not right. I'll keep you in my thoughts and prayers.");
+      alert("Something's not right. Pretend everything is fine.");
     }
     else{
       this.setState({ isShowStarted: true})
@@ -76,7 +170,7 @@ class IndexPage extends Component {
   render() {
     return (
       <Layout>
-        <SEO title="Home" />
+        <SEO title="Abtsract: Home" description="Samuel R. Mendez master's thesis presentation on ritual view of communication in public health. Completed for an M.S. degree in Comparative Media Studies at MIT, 2020." />
         <section style={{display: "flex", flexDirection: `column`, overflowX: `hidden`, padding: `.5em`}}>
           <h2 style={{ padding: `.5em 0 1em 0`, textAlign: `center`, textShadow:`-1.5px -1.5px 0 #acee66, 1.5px -1.5px 0 #acee66, -1.5px 1.5px 0 #acee66, 1.5px 1.5px 0 #acee66`}}>Intro</h2>
           <LeftParallelogram bgcolor="#1AE063" fontColor="black">
@@ -134,8 +228,15 @@ class IndexPage extends Component {
             <h2 style={{textAlign: `center`, textShadow:`-1.5px -1.5px 0 #acee66, 1.5px -1.5px 0 #acee66, -1.5px 1.5px 0 #acee66, 1.5px 1.5px 0 #acee66`}}>The Plays.</h2>
             <div style={{display:`flex`, flexWrap: `wrap`,  justifyContent: `center`}}>
               <ContainerRounded bgcolor="#0000AE" color="white">
-                <p><span style={{fontWeight: `700`, textSize: `2em`}}>#1:</span><br/>The Wave</p>
-                { this.state.isShowStarted && <PlayButton playid="play01" onClickFunction={this.handlePlayButtonClick} text="start Play 1"/> }
+                {
+                  !this.state.isPlay01Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#1:</span><br/>The Wave</p>
+                }
+                {
+                  this.state.isPlay01Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#1:</span><br/>The Wave</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay01Completed && <PlayButton playid="play01" onClickFunction={this.handlePlayButtonClick} text="start Play 1"/>
+                }
               </ContainerRounded>
               <ContainerRectangle bgcolor="#FFCCF7" color="black">
                 <p><span style={{fontWeight: `700`, textSize: `2em`}}>#2:</span><br/>Transmission + Ritual</p>
@@ -164,7 +265,9 @@ class IndexPage extends Component {
             </div>
           </section>
           <section>
-            <Play01 displayStyle={ this.state.play01DisplayStyle } bgcolor="white" color="black" playid="play01" onClickEndButton={this.handleEndPlayButtonClick}/>
+            { (this.state.play01DisplayStyle==="block") &&
+              <Play01 displayStyle={ this.state.play01DisplayStyle } bgcolor="white" color="black" playid="play01" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
           </section>
           { this.state.isShowStarted && <CountdownClock totalTimeSeconds={this.state.totalTimeSeconds} totalTimeMinutes={this.state.totalTimeMinutes} /> }
         </main>
