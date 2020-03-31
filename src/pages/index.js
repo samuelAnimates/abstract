@@ -8,6 +8,11 @@ import Layout from "../components/layout"
 import Logo from "../components/logo"
 import PlayButton from "../components/playButton"
 import Play01 from "../components/play01"
+import Play02 from "../components/play02"
+import Play03 from "../components/play03"
+import Play04 from "../components/play04"
+import Play05 from "../components/play05"
+import Play06 from "../components/play06"
 import SEO from "../components/seo"
 import StartButton from "../components/startButton"
 import LeftParallelogram from "../components/leftParallelogram"
@@ -38,7 +43,7 @@ class IndexPage extends Component {
       play14DisplayStyle: "none",
       play15DisplayStyle: "none",
       totalTimeSeconds: 1,
-      totalTimeMinutes: 1,
+      totalTimeMinutes: 25,
       isPlay01Completed: false,
       isPlay02Completed: false,
       isPlay03Completed: false,
@@ -75,6 +80,26 @@ class IndexPage extends Component {
       if (recentplayid==="play01"){
         this.setState({ play01DisplayStyle: "none" });
         this.setState({isPlay01Completed: true});
+      }
+      if (recentplayid==="play02"){
+        this.setState({ play02DisplayStyle: "none" });
+        this.setState({isPlay02Completed: true});
+      }
+      if (recentplayid==="play03"){
+        this.setState({ play03DisplayStyle: "none" });
+        this.setState({isPlay03Completed: true});
+      }
+      if (recentplayid==="play04"){
+        this.setState({ play04DisplayStyle: "none" });
+        this.setState({isPlay04Completed: true});
+      }
+      if (recentplayid==="play05"){
+        this.setState({ play05DisplayStyle: "none" });
+        this.setState({isPlay05Completed: true});
+      }
+      if (recentplayid==="play06"){
+        this.setState({ play06DisplayStyle: "none" });
+        this.setState({isPlay06Completed: true});
       }
     }
 
@@ -229,34 +254,69 @@ class IndexPage extends Component {
             <div style={{display:`flex`, flexWrap: `wrap`,  justifyContent: `center`}}>
               <ContainerRounded bgcolor="#0000AE" color="white">
                 {
-                  !this.state.isPlay01Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#1:</span><br/>The Wave</p>
+                  !this.state.isPlay01Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#1:</span><br/>An honest check-in, more or less</p>
                 }
                 {
-                  this.state.isPlay01Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#1:</span><br/>The Wave</p>
+                  this.state.isPlay01Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#1:</span><br/>An honest check-in, more or less</p>
                 }
                 { 
-                  this.state.isShowStarted && !this.state.isPlay01Completed && <PlayButton playid="play01" onClickFunction={this.handlePlayButtonClick} text="start Play 1"/>
+                  this.state.isShowStarted && !this.state.isPlay01Completed && <PlayButton playid="play01" onClickFunction={this.handlePlayButtonClick} text="Start Play 1"/>
                 }
               </ContainerRounded>
-              <ContainerRectangle bgcolor="#FFCCF7" color="black">
-                <p><span style={{fontWeight: `700`, textSize: `2em`}}>#2:</span><br/>Transmission + Ritual</p>
-                { this.state.isShowStarted && <PlayButton buttonId="play02" onClickFunction={this.handlePlayButtonClick} text="start Play 2"/> }
-              </ContainerRectangle>
-              <ContainerCircle bgcolor="white" color="black">
-                <p><span style={{fontWeight: `700`, textSize: `2em`}}>#3:</span><br/>Q+A</p>
-                { this.state.isShowStarted && <PlayButton buttonId="play03" onClickFunction={this.handlePlayButtonClick} text="start Play 3"/> }
+              <ContainerCircle bgcolor="#FE9FE6" color="black">
+                {
+                  !this.state.isPlay02Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#2:</span><br/>Q&amp;A #1</p>
+                }
+                {
+                  this.state.isPlay02Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#2:</span><br/>Q&amp;A #1</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay02Completed && <PlayButton playid="play02" onClickFunction={this.handlePlayButtonClick} text="Start Play 2"/>
+                }
               </ContainerCircle>
+              <ContainerRectangle bgcolor="#246600" color="white">
+                {
+                  !this.state.isPlay03Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#3:</span><br/>Q&amp;A #2</p>
+                }
+                {
+                  this.state.isPlay03Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#3:</span><br/>Q&amp;A #2</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay03Completed && <PlayButton playid="play03" onClickFunction={this.handlePlayButtonClick} text="Start Play 3"/>
+                }
+              </ContainerRectangle>
               <ContainerRoundedAssym bgcolor="#F3FFCC" color="black">
-                <p><span style={{fontWeight: `700`, textSize: `2em`}}>#4:</span><br/>Problematic Faves</p>
-                { this.state.isShowStarted && <PlayButton buttonId="play04" onClickFunction={this.handlePlayButtonClick} text="start Play 4"/> }
+                {
+                  !this.state.isPlay04Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#4:</span><br/>Ritual &amp; Transmission</p>
+                }
+                {
+                  this.state.isPlay04Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#4:</span><br/>Ritual &amp; Transmission</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay04Completed && <PlayButton playid="play04" onClickFunction={this.handlePlayButtonClick} text="Start Play 4"/>
+                }
               </ContainerRoundedAssym>
               <ContainerRoundedAssym bgcolor="#753002" color="white">
-                <p><span style={{fontWeight: `700`, textSize: `2em`}}>#5:</span><br/>A People's Guide to Precision Medicine</p>
-                { this.state.isShowStarted && <PlayButton buttonId="play05" onClickFunction={this.handlePlayButtonClick} text="start Play 5"/> }
+                {
+                  !this.state.isPlay05Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#5:</span><br/>A People’s Guide to Precision Medicine</p>
+                }
+                {
+                  this.state.isPlay05Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#5:</span><br/>A People’s Guide to Precision Medicine</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay05Completed && <PlayButton playid="play05" onClickFunction={this.handlePlayButtonClick} text="Start Play 5"/>
+                }
               </ContainerRoundedAssym>
               <ContainerRoundedAssym bgcolor="white" color="black">
-                <p><span style={{fontWeight: `700`, textSize: `2em`}}>#6:</span><br/>HER</p>
-                { this.state.isShowStarted && <PlayButton buttonId="play06" onClickFunction={this.handlePlayButtonClick} text="start Play 6"/> }
+                {
+                  !this.state.isPlay06Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#6:</span><br/>A PEOPLE’S GUIDE TO PRECISION MEDICINE: THE DEVELOPMENT AND DESIGN OF A MEDIA-BASED COMMUNITY ENGAGEMENT PROGRAM,” or “THE CONFERENCE I MADE THIS POSTER FOR GOT CANCELLED AND I SPENT TOO MUCH TIME TURNING A GOOGLE SLIDE INTO A POSTER FOR NO ONE TO SEE IT, SO GUESS WHO’S HOSTING A POP-UP POSTER SESSION~</p>
+                }
+                {
+                  this.state.isPlay06Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#6:</span><br/>A PEOPLE’S GUIDE TO PRECISION MEDICINE: THE DEVELOPMENT AND DESIGN OF A MEDIA-BASED COMMUNITY ENGAGEMENT PROGRAM,” or “THE CONFERENCE I MADE THIS POSTER FOR GOT CANCELLED AND I SPENT TOO MUCH TIME TURNING A GOOGLE SLIDE INTO A POSTER FOR NO ONE TO SEE IT, SO GUESS WHO’S HOSTING A POP-UP POSTER SESSION~</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay06Completed && <PlayButton playid="play06" onClickFunction={this.handlePlayButtonClick} text="Start Play 6"/>
+                }
               </ContainerRoundedAssym>
               <ContainerRoundedAssym bgcolor="white" color="black">
                 <p><span style={{fontWeight: `700`, textSize: `2em`}}>#7:</span><br/>Nicole</p>
@@ -267,6 +327,21 @@ class IndexPage extends Component {
           <section>
             { (this.state.play01DisplayStyle==="block") &&
               <Play01 displayStyle={ this.state.play01DisplayStyle } bgcolor="white" color="black" playid="play01" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play02DisplayStyle==="block") &&
+              <Play02 displayStyle={ this.state.play02DisplayStyle } bgcolor="white" color="black" playid="play02" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play03DisplayStyle==="block") &&
+              <Play03 displayStyle={ this.state.play03DisplayStyle } bgcolor="white" color="black" playid="play03" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play04DisplayStyle==="block") &&
+              <Play04 displayStyle={ this.state.play04DisplayStyle } bgcolor="white" color="black" playid="play04" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play05DisplayStyle==="block") &&
+              <Play05 displayStyle={ this.state.play05DisplayStyle } bgcolor="white" color="black" playid="play05" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play06DisplayStyle==="block") &&
+              <Play06 displayStyle={ this.state.play06DisplayStyle } bgcolor="white" color="black" playid="play06" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
             }
           </section>
           { this.state.isShowStarted && <CountdownClock totalTimeSeconds={this.state.totalTimeSeconds} totalTimeMinutes={this.state.totalTimeMinutes} /> }
