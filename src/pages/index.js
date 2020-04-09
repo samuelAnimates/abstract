@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import CenterRectangle from "../components/centerRectangle"
 import ContainerCircle from "../components/containerCircle"
 import ContainerRounded from "../components/containerRounded"
 import ContainerRoundedAssym from "../components/containerRoundedAssym"
@@ -13,6 +14,12 @@ import Play03 from "../components/play03"
 import Play04 from "../components/play04"
 import Play05 from "../components/play05"
 import Play06 from "../components/play06"
+import Play07 from "../components/play07"
+import Play08 from "../components/play08"
+import Play09 from "../components/play09"
+import Play10 from "../components/play10"
+import Play11 from "../components/play11"
+import Play12 from "../components/play12"
 import SEO from "../components/seo"
 import StartButton from "../components/startButton"
 import LeftParallelogram from "../components/leftParallelogram"
@@ -39,9 +46,6 @@ class IndexPage extends Component {
       play10DisplayStyle: "none",
       play11DisplayStyle: "none",
       play12DisplayStyle: "none",
-      play13DisplayStyle: "none",
-      play14DisplayStyle: "none",
-      play15DisplayStyle: "none",
       totalTimeSeconds: 1,
       totalTimeMinutes: 25,
       isPlay01Completed: false,
@@ -55,10 +59,7 @@ class IndexPage extends Component {
       isPlay09Completed: false,
       isPlay10Completed: false,
       isPlay11Completed: false,
-      isPlay12Completed: false,
-      isPlay13Completed: false,
-      isPlay14Completed: false,
-      isPlay15Completed: false
+      isPlay12Completed: false
     };
     
   }
@@ -100,6 +101,30 @@ class IndexPage extends Component {
       if (recentplayid==="play06"){
         this.setState({ play06DisplayStyle: "none" });
         this.setState({isPlay06Completed: true});
+      }
+      if (recentplayid==="play07"){
+        this.setState({ play07DisplayStyle: "none" });
+        this.setState({isPlay07Completed: true});
+      }
+      if (recentplayid==="play08"){
+        this.setState({ play08DisplayStyle: "none" });
+        this.setState({isPlay08Completed: true});
+      }
+      if (recentplayid==="play09"){
+        this.setState({ play09DisplayStyle: "none" });
+        this.setState({isPlay09Completed: true});
+      }
+      if (recentplayid==="play10"){
+        this.setState({ play10DisplayStyle: "none" });
+        this.setState({isPlay10Completed: true});
+      }
+      if (recentplayid==="play11"){
+        this.setState({ play11DisplayStyle: "none" });
+        this.setState({isPlay11Completed: true});
+      }
+      if (recentplayid==="play12"){
+        this.setState({ play12DisplayStyle: "none" });
+        this.setState({isPlay12Completed: true});
       }
     }
 
@@ -160,22 +185,13 @@ class IndexPage extends Component {
         this.setState({ play09DisplayStyle: "block" });
       }
       if (currentplayid==="play10"){
-        this.setState({ play01DisplayStyle: "block" });
+        this.setState({ play10DisplayStyle: "block" });
       }
       if (currentplayid==="play11"){
         this.setState({ play11DisplayStyle: "block" });
       }
       if (currentplayid==="play12"){
         this.setState({ play12DisplayStyle: "block" });
-      }
-      if (currentplayid==="play13"){
-        this.setState({ play13DisplayStyle: "block" });
-      }
-      if (currentplayid==="play14"){
-        this.setState({ play14DisplayStyle: "block" });
-      }
-      if (currentplayid==="play15"){
-        this.setState({ play15DisplayStyle: "block" });
       }
 
     }
@@ -199,128 +215,184 @@ class IndexPage extends Component {
         <section style={{display: "flex", flexDirection: `column`, overflowX: `hidden`, padding: `.5em`}}>
           <h2 style={{ padding: `.5em 0 1em 0`, textAlign: `center`, textShadow:`-1.5px -1.5px 0 #acee66, 1.5px -1.5px 0 #acee66, -1.5px 1.5px 0 #acee66, 1.5px 1.5px 0 #acee66`}}>Intro</h2>
           <LeftParallelogram bgcolor="#1AE063" fontColor="black">
-            <h3 style={{textAlign: `center`}}>Overview</h3>
+            <h3 style={{textAlign: `center`}}>Who is this?</h3>
             <div style={{textAlign: `right`}}>
-              <p>Hi! This is the script for the public presentation of my master's thesis in <a href="https://cmsw.mit.edu/">Comparative Media Studies at MIT</a>.</p>
-              <p>I'm <a href="https://www.samuelanimates.com/">Samuel R. Mendez</a>. I only use that name in text. I'm an artist and a public health researcher. In my thesis, I look at how the humanities can promote community engagement that can advance health equity.</p>
-              <p>In my thesis, I play with various media to give different kinds of insights into health topics. So, I want to try that here as well. Now let's move on to the part where I tell you what's going on here.</p>
+              <p>Hi. I’m <a href="https://www.samuelanimates.com/">Samuel R. Mendez</a>. (I only use that name in writing. This might be the first time I’ve ever said it out loud.)</p>
+              <p>This is the script for my presentation of my master’s thesis in <a href="https://cmsw.mit.edu/">Comparative Media Studies at MIT</a>. ts title is, “Health Equity Rituals: A Case for the Ritual View of Communication in an Era of Precision Medicine.” In it, I experiment with various media as ways to offer insights into public health topics. So, I want to try that here as well. Now let’s move onto the part where I tell you what the big idea is.</p>
             </div>
           </LeftParallelogram>
           <div style={{display: "flex", justifyContent: `center`}}>
             <Logo/>
           </div>
           <RightParallelogram>
-            <h3 style={{textAlign: `center`}}>Description</h3>
+            <h3 style={{textAlign: `center`}}>What's the big idea?</h3>
             <div style={{textAlign: `left`}}>
-              <p>I will try perform 12 plays. They might not resemble any play you've seen before, but they' a're plays. Like I said before, I'm an artist and a scholar. Maybe even a gentleman. I wouldn't lie to you.</p>
-              <p>That also means I will not lie in any of these plays. I will not pretend to be anywhere but here at MIT. I will not pretend to be anyone but myself. And I will not pretend to be any-when other than right now. It'll make sense once you experence it, trust me.</p>
-              <p>Now let's move on to the instructions. Because at key points I will need you all to participate.</p>
+              <p>In my thesis, I spend many pages using many ways to support one big idea: communication isn’t  just about information, but also about social roles. And this has big implications for health equity in the US. Especially in an era of precision medicine.</p>
+              <p>I use the word “ritual” to describe this view because I like the questions it raises. Who’s at the table? How are they expected to act toward each other? Who’s in what roles? I think these are important questions to ask in public health. Without them, I think US public health researchers risk unintentionally reinforcing social roles that can harm medically underserved communities.</p>
+              <p>So I’m 4 paragraphs in, and I recognize there’s already a lot going on. So let’s go over a few key definitions so we’re a little closer to being on the same page.</p>
             </div>
           </RightParallelogram>
           <div style={{display: "flex", justifyContent: `center`}}>
             <Logo/>
           </div>
-          <LeftParallelogram bgcolor="#3b0025" fontColor="white">
-            <h3 style={{textAlign: `center`}}>Instructions</h3>
-            <div style={{textAlign: `right`}}>
-              <p>I only have 24 minutes to get through 12 plays. That means I have to <span role="img" aria-label="handclap">👏</span> keep <span role="img" aria-label="handclap">👏</span> things <span role="img" aria-label="handclap">👏</span> on <span role="img" aria-label="handclap">👏</span> track.</p>
-              <p>And I need your help. Because I don't know the order of the 12 plays. I don't know the order because you will decide it for me. When I finish one play I will ask you all, "What play would you like to see next?" And you will respond with the number of the play you want to see. Let's try it now. Just pick a random number.</p>
-              <p>What play would you like to see next?</p>
-              <p>Now let's get started.</p>
+          <CenterRectangle bgcolor="#FFEFC2" fontColor="black">
+            <h3 style={{textAlign: `center`}}>What do I need to know?</h3>
+            <div style={{textAlign: `left`}}>
+              <p>I’m going to ask for some help in reading out these definitions to get us started:</p>
+              <p><span style={{fontWeight:`700`}}>Health Equity.</span> Health equity is social justice in health. It is justice in access to health opportunities for members of historically disadvantaged groups. (Source: Paula Braveman) (Braveman 2014). It is the idea that everyone should have the chance to live a healthy life as they see fit, no matter who they are.</p>
+              <p><span style={{fontWeight:`700`}}>Medically Underserved Community.</span> a group facing societal, economic, cultural, or linguistic barriers to healthcare. This includes people experiencing homelessness, migrant workers, undocumented immigrants, people with low incomes, people without health insurance, people in geographically isolated areas, gender and sexual minorities, Indigenous communities, people of color, and people with disabilities. This is an expansion of the definition of “medically underserved populations” by the US Bureau of Health Workforce (Bureau of Health Workforce 2019).</p>
+              <p><span style={{fontWeight:`700`}}>Precision Medicine.</span> Precision medicine is a budding approach to medicine and disease prevention. It uses data about a person’s genes, lifestyle, and environment to tailor health care. (Lister Hill National Center for Biome...). As such, it depends on large amounts of data from a large number of patients for analysis. Right now, the concept of precision medicine is more of an aspiration than it is a specific technique.</p>
+              <p><span style={{fontWeight:`700`}}>Ritual Communication.</span> In public health, a ritual view of communication focuses on the social structures that a communication process maintains Communication maintains social structures by outlining power dynamics, social roles, expectations, conflicts, and feedback loops. I draw on the work of James Carey, Stuart Hall, and Nancy Fraser for this definition.</p>
+              <p>And now, onto the show.</p>
             </div>
-          </LeftParallelogram>
+          </CenterRectangle>
           <div style={{display: "flex", justifyContent: `center`}}>
             <Logo/>
           </div>
-          <RightParallelogram>
-            <h3 style={{textAlign: `center`}}>Getting Started</h3>
-            <div style={{textAlign: `left`}}>
-              <p>Now I did lie a little bit. But it was just a lie by omission, so it's technically fine. I don't know the order of the plays, but I did already decide which play is first. Play #1 will be first. Shocking. Totally unique. Never been done before.</p>
-              <p>But first, I'll give you a chance to look at the numbers and titles of all the plays. Then I'll start the timer. Then I'll perform play #1. And then I'll ask you, "What play would you like to see next?"</p>
-            </div>
-          </RightParallelogram>
         </section>
-        <div style={{display: "flex", justifyContent: `center`}}>
-            <Logo/>
-        </div>
         <main style={{ padding: `2em` }}>
-         { !this.state.isShowStarted && <section>
-              <h2 style={{textAlign: `center`, textShadow:`-1.5px -1.5px 0 #acee66, 1.5px -1.5px 0 #acee66, -1.5px 1.5px 0 #acee66, 1.5px 1.5px 0 #acee66`}}>The Button.</h2>
-                <StartButton onClickFunction={this.handleStartButtonClick}/>
-            </section>
-          }
-          <section>
-            <h2 style={{textAlign: `center`, textShadow:`-1.5px -1.5px 0 #acee66, 1.5px -1.5px 0 #acee66, -1.5px 1.5px 0 #acee66, 1.5px 1.5px 0 #acee66`}}>The Plays.</h2>
+          <h2 style={{textAlign: `center`, textShadow:`-1.5px -1.5px 0 #acee66, 1.5px -1.5px 0 #acee66, -1.5px 1.5px 0 #acee66, 1.5px 1.5px 0 #acee66`}}>The Show</h2>
+          <CenterRectangle bgcolor="white" fontColor="black">
+            <h3 style={{textAlign: `center`}}>The Rules</h3>
+            <div style={{textAlign: `left`}}>
+              <p>This show is called “<span role="img" aria-label="Sparkle emoji">✨</span> Abstract <span role="img" aria-label="Sparkle emoji">✨</span>” (with an emphasis on the sparkle emojis). This is not my thesis. It’s a weird online performance meant to share what I learned through the process of making my thesis. Hopefully, it also paints me as someone who knows what they’re talking about when it comes to health equity and public health community engagement</p>
+              <p>This show is inspired by the work of The Chicago Neo-Futurists. As such, it’s made up of 10 short non-fiction plays that I will try to perform in 25 minutes. I don’t know what order these plays will come in. I’m going to need your help for that, so stay on your toes.</p>
+              <p>There’s a lot going on, but hopefully things will become clearer as time goes on. And with that, let’s start the timer.</p>
+            </div>
+            <div>
+              { !this.state.isShowStarted &&
+                <div style={{textAlign: `center`}}>
+                    <StartButton onClickFunction={this.handleStartButtonClick}/>
+                </div>
+              }
+            </div>
+          </CenterRectangle>
+          <div style={{display: "flex", justifyContent: `center`}}>
+            <Logo/>
+          </div>
+          <section style={{paddingTop: `2em`}}>
+            <h3 style={{textAlign: `center`, textShadow:`-1.5px -1.5px 0 #acee66, 1.5px -1.5px 0 #acee66, -1.5px 1.5px 0 #acee66, 1.5px 1.5px 0 #acee66`}}>The Plays.</h3>
             <div style={{display:`flex`, flexWrap: `wrap`,  justifyContent: `center`}}>
-              <ContainerRounded bgcolor="#0000AE" color="white">
+              <ContainerRounded bgcolor="#B3D1FF" color="black">
                 {
-                  !this.state.isPlay01Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#1:</span><br/>An honest check-in, more or less</p>
+                  !this.state.isPlay01Completed && <p><span role="img" aria-label="Poop emoji" style={{ textSize: `20px` }}>💩</span><br/>An honest check-in, more or less</p>
                 }
                 {
-                  this.state.isPlay01Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#1:</span><br/>An honest check-in, more or less</p>
+                  this.state.isPlay01Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>An honest check-in, more or less</p>
                 }
                 { 
-                  this.state.isShowStarted && !this.state.isPlay01Completed && <PlayButton playid="play01" onClickFunction={this.handlePlayButtonClick} text="Start Play 1"/>
+                  this.state.isShowStarted && !this.state.isPlay01Completed && <PlayButton playid="play01" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
                 }
               </ContainerRounded>
-              <ContainerCircle bgcolor="#FE9FE6" color="black">
+              <ContainerCircle bgcolor="#FEF1FB" color="black">
                 {
-                  !this.state.isPlay02Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#2:</span><br/>Q&amp;A #1</p>
+                  !this.state.isPlay02Completed && <p><span role="img" aria-label="Question mark emoji" style={{ textSize: `20px` }}>❓</span><br/>Hard to reach</p>
                 }
                 {
-                  this.state.isPlay02Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#2:</span><br/>Q&amp;A #1</p>
+                  this.state.isPlay02Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>Hard to reach</p>
                 }
                 { 
-                  this.state.isShowStarted && !this.state.isPlay02Completed && <PlayButton playid="play02" onClickFunction={this.handlePlayButtonClick} text="Start Play 2"/>
+                  this.state.isShowStarted && !this.state.isPlay02Completed && <PlayButton playid="play02" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
                 }
               </ContainerCircle>
-              <ContainerRectangle bgcolor="#246600" color="white">
+              <ContainerRectangle bgcolor="#63FF0F" color="black">
                 {
-                  !this.state.isPlay03Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#3:</span><br/>Q&amp;A #2</p>
+                  !this.state.isPlay03Completed && <p><span role="img" aria-label="Poop emoji" style={{ textSize: `20px` }}>👏</span><br/>A moment of appreciation for Barbara Israel</p>
                 }
                 {
-                  this.state.isPlay03Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#3:</span><br/>Q&amp;A #2</p>
+                  this.state.isPlay03Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>A moment of appreciation for Barbara Israel</p>
                 }
                 { 
-                  this.state.isShowStarted && !this.state.isPlay03Completed && <PlayButton playid="play03" onClickFunction={this.handlePlayButtonClick} text="Start Play 3"/>
+                  this.state.isShowStarted && !this.state.isPlay03Completed && <PlayButton playid="play03" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
                 }
               </ContainerRectangle>
               <ContainerRoundedAssym bgcolor="#F3FFCC" color="black">
                 {
-                  !this.state.isPlay04Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#4:</span><br/>Ritual &amp; Transmission</p>
+                  !this.state.isPlay04Completed && <p><span role="img" aria-label="Speaker emoji" style={{ textSize: `20px` }}>🔊</span><br/>Ritual &amp; Transmission</p>
                 }
                 {
-                  this.state.isPlay04Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#4:</span><br/>Ritual &amp; Transmission</p>
+                  this.state.isPlay04Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>Ritual &amp; Transmission</p>
                 }
                 { 
-                  this.state.isShowStarted && !this.state.isPlay04Completed && <PlayButton playid="play04" onClickFunction={this.handlePlayButtonClick} text="Start Play 4"/>
+                  this.state.isShowStarted && !this.state.isPlay04Completed && <PlayButton playid="play04" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
                 }
               </ContainerRoundedAssym>
-              <ContainerRoundedAssym bgcolor="#753002" color="white">
+              <ContainerRoundedAssym bgcolor="#FC9855" color="black">
                 {
-                  !this.state.isPlay05Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#5:</span><br/>A People’s Guide to Precision Medicine</p>
+                  !this.state.isPlay05Completed && <p><span role="img" aria-label="Book emoji" style={{ textSize: `20px` }}>📖</span><br/>A People’s Guide to Precision Medicine</p>
                 }
                 {
-                  this.state.isPlay05Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#5:</span><br/>A People’s Guide to Precision Medicine</p>
+                  this.state.isPlay05Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>A People’s Guide to Precision Medicine</p>
                 }
                 { 
-                  this.state.isShowStarted && !this.state.isPlay05Completed && <PlayButton playid="play05" onClickFunction={this.handlePlayButtonClick} text="Start Play 5"/>
+                  this.state.isShowStarted && !this.state.isPlay05Completed && <PlayButton playid="play05" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
+                }
+              </ContainerRoundedAssym>
+              <ContainerRoundedAssym bgcolor="#70E2C0" color="black">
+                {
+                  !this.state.isPlay06Completed && <p><span role="img" aria-label="Laptop emoji" style={{ textSize: `20px` }}>💻</span><br/>A PEOPLE’S GUIDE TO PRECISION MEDICINE: THE DEVELOPMENT AND DESIGN OF A MEDIA-BASED COMMUNITY ENGAGEMENT PROGRAM,” or “THE CONFERENCE I MADE THIS POSTER FOR GOT CANCELLED AND I SPENT TOO MUCH TIME TURNING A GOOGLE SLIDE INTO A POSTER FOR NO ONE TO SEE IT, SO GUESS WHO’S HOSTING A POP-UP POSTER SESSION~</p>
+                }
+                {
+                  this.state.isPlay06Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>A PEOPLE’S GUIDE TO PRECISION MEDICINE: THE DEVELOPMENT AND DESIGN OF A MEDIA-BASED COMMUNITY ENGAGEMENT PROGRAM,” or “THE CONFERENCE I MADE THIS POSTER FOR GOT CANCELLED AND I SPENT TOO MUCH TIME TURNING A GOOGLE SLIDE INTO A POSTER FOR NO ONE TO SEE IT, SO GUESS WHO’S HOSTING A POP-UP POSTER SESSION~</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay06Completed && <PlayButton playid="play06" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
+                }
+              </ContainerRoundedAssym>
+              <ContainerRectangle bgcolor="#F8DDB8" color="black">
+                {
+                  !this.state.isPlay07Completed && <p><span role="img" aria-label="Cycle emoji" style={{ textSize: `20px` }}>🔄</span><br/>A KALEIDOCYCLE!</p>
+                }
+                {
+                  this.state.isPlay07Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>A KALEIDOCYCLE!</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay07Completed && <PlayButton playid="play07" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
+                }
+              </ContainerRectangle>
+              <ContainerCircle bgcolor="#FFC4C5" color="black">
+                {
+                  !this.state.isPlay08Completed && <p><span role="img" aria-label="Eyes emoji" style={{ textSize: `20px` }}>👀</span><br/>A zine</p>
+                }
+                {
+                  this.state.isPlay08Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#6:</span><br/>A zine</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay08Completed && <PlayButton playid="play08" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
+                }
+              </ContainerCircle>
+              <ContainerRounded bgcolor="#B5BCCF" color="black">
+                {
+                  !this.state.isPlay09Completed && <p><span role="img" aria-label="Dancer emoji" style={{ textSize: `20px` }}>💃</span><br/>HER Model of Community Engagement</p>
+                }
+                {
+                  this.state.isPlay09Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>HER Model of Community Engagement</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay09Completed && <PlayButton playid="play09" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
+                }
+              </ContainerRounded>
+              <ContainerRoundedAssym bgcolor="white" color="black">
+                {
+                  !this.state.isPlay11Completed && <p><span role="img" aria-label="Smiling cat emoji" style={{ textSize: `20px` }}>😺</span><br/>A taste of a summer workshop</p>
+                }
+                {
+                  this.state.isPlay11Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>>A taste of a summer workshop</p>
+                }
+                { 
+                  this.state.isShowStarted && !this.state.isPlay11Completed && <PlayButton playid="play11" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
                 }
               </ContainerRoundedAssym>
               <ContainerRoundedAssym bgcolor="white" color="black">
                 {
-                  !this.state.isPlay06Completed && <p><span style={{fontWeight: `700`, textSize: `2em`}}>#6:</span><br/>A PEOPLE’S GUIDE TO PRECISION MEDICINE: THE DEVELOPMENT AND DESIGN OF A MEDIA-BASED COMMUNITY ENGAGEMENT PROGRAM,” or “THE CONFERENCE I MADE THIS POSTER FOR GOT CANCELLED AND I SPENT TOO MUCH TIME TURNING A GOOGLE SLIDE INTO A POSTER FOR NO ONE TO SEE IT, SO GUESS WHO’S HOSTING A POP-UP POSTER SESSION~</p>
+                  !this.state.isPlay12Completed && <p><span role="img" aria-label="Alien emoji" style={{ textSize: `20px` }}>👽</span><br/>The Future of All of Us</p>
                 }
                 {
-                  this.state.isPlay06Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}><span style={{fontWeight: `700`, textSize: `2em`}}>#6:</span><br/>A PEOPLE’S GUIDE TO PRECISION MEDICINE: THE DEVELOPMENT AND DESIGN OF A MEDIA-BASED COMMUNITY ENGAGEMENT PROGRAM,” or “THE CONFERENCE I MADE THIS POSTER FOR GOT CANCELLED AND I SPENT TOO MUCH TIME TURNING A GOOGLE SLIDE INTO A POSTER FOR NO ONE TO SEE IT, SO GUESS WHO’S HOSTING A POP-UP POSTER SESSION~</p>
+                  this.state.isPlay12Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>The Future of All of Us</p>
                 }
                 { 
-                  this.state.isShowStarted && !this.state.isPlay06Completed && <PlayButton playid="play06" onClickFunction={this.handlePlayButtonClick} text="Start Play 6"/>
+                  this.state.isShowStarted && !this.state.isPlay12Completed && <PlayButton playid="play12" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
                 }
-              </ContainerRoundedAssym>
-              <ContainerRoundedAssym bgcolor="white" color="black">
-                <p><span style={{fontWeight: `700`, textSize: `2em`}}>#7:</span><br/>Nicole</p>
-                { this.state.isShowStarted && <PlayButton buttonId="play07" onClickFunction={this.handlePlayButtonClick} text="start Play 7"/> }
               </ContainerRoundedAssym>
             </div>
           </section>
@@ -342,6 +414,24 @@ class IndexPage extends Component {
             }
             { (this.state.play06DisplayStyle==="block") &&
               <Play06 displayStyle={ this.state.play06DisplayStyle } bgcolor="white" color="black" playid="play06" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play07DisplayStyle==="block") &&
+              <Play07 displayStyle={ this.state.play07DisplayStyle } bgcolor="white" color="black" playid="play07" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play08DisplayStyle==="block") &&
+              <Play08 displayStyle={ this.state.play08DisplayStyle } bgcolor="white" color="black" playid="play08" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play09DisplayStyle==="block") &&
+              <Play09 displayStyle={ this.state.play09DisplayStyle } bgcolor="white" color="black" playid="play09" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play10DisplayStyle==="block") &&
+              <Play10 displayStyle={ this.state.play10DisplayStyle } bgcolor="white" color="black" playid="play10" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play11DisplayStyle==="block") &&
+              <Play11 displayStyle={ this.state.play11DisplayStyle } bgcolor="white" color="black" playid="play11" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
+            }
+            { (this.state.play12DisplayStyle==="block") &&
+              <Play12 displayStyle={ this.state.play12DisplayStyle } bgcolor="white" color="black" playid="play12" onKeyDown={ this.handleKeyPress } onClickEndButton={this.handleEndPlayButtonClick}/>
             }
           </section>
           { this.state.isShowStarted && <CountdownClock totalTimeSeconds={this.state.totalTimeSeconds} totalTimeMinutes={this.state.totalTimeMinutes} /> }
