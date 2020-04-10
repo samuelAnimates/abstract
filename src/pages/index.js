@@ -46,7 +46,7 @@ class IndexPage extends Component {
       play10DisplayStyle: "none",
       play11DisplayStyle: "none",
       play12DisplayStyle: "none",
-      totalTimeSeconds: 1,
+      totalTimeSeconds: 0,
       totalTimeMinutes: 25,
       isPlay01Completed: false,
       isPlay02Completed: false,
@@ -218,7 +218,7 @@ class IndexPage extends Component {
             <h3 style={{textAlign: `center`}}>Who is this?</h3>
             <div style={{textAlign: `right`}}>
               <p>Hi. I’m <a href="https://www.samuelanimates.com/">Samuel R. Mendez</a>. (I only use that name in writing. This might be the first time I’ve ever said it out loud.)</p>
-              <p>This is the script for my presentation of my master’s thesis in <a href="https://cmsw.mit.edu/">Comparative Media Studies at MIT</a>. ts title is, “Health Equity Rituals: A Case for the Ritual View of Communication in an Era of Precision Medicine.” In it, I experiment with various media as ways to offer insights into public health topics. So, I want to try that here as well. Now let’s move onto the part where I tell you what the big idea is.</p>
+              <p>This is the script for my presentation of my master’s thesis in <a href="https://cmsw.mit.edu/">Comparative Media Studies at MIT</a>. Its title is, “Health Equity Rituals: A Case for the Ritual View of Communication in an Era of Precision Medicine.” In it, I experiment with various media as ways to offer insights into public health topics. So, I want to try that here as well. Now let’s move onto the part where I tell you what the big idea is.</p>
             </div>
           </LeftParallelogram>
           <div style={{display: "flex", justifyContent: `center`}}>
@@ -227,7 +227,7 @@ class IndexPage extends Component {
           <RightParallelogram>
             <h3 style={{textAlign: `center`}}>What's the big idea?</h3>
             <div style={{textAlign: `left`}}>
-              <p>In my thesis, I spend many pages using many ways to support one big idea: communication isn’t  just about information, but also about social roles. And this has big implications for health equity in the US. Especially in an era of precision medicine.</p>
+              <p>In my thesis, I spend many pages using many ways to support one big idea: communication isn’t only about information, but also about social roles. And this has big implications for health equity in the US. Especially in an era of precision medicine.</p>
               <p>I use the word “ritual” to describe this view because I like the questions it raises. Who’s at the table? How are they expected to act toward each other? Who’s in what roles? I think these are important questions to ask in public health. Without them, I think US public health researchers risk unintentionally reinforcing social roles that can harm medically underserved communities.</p>
               <p>So I’m 4 paragraphs in, and I recognize there’s already a lot going on. So let’s go over a few key definitions so we’re a little closer to being on the same page.</p>
             </div>
@@ -239,10 +239,10 @@ class IndexPage extends Component {
             <h3 style={{textAlign: `center`}}>What do I need to know?</h3>
             <div style={{textAlign: `left`}}>
               <p>I’m going to ask for some help in reading out these definitions to get us started:</p>
-              <p><span style={{fontWeight:`700`}}>Health Equity.</span> Health equity is social justice in health. It is justice in access to health opportunities for members of historically disadvantaged groups. (Source: Paula Braveman) (Braveman 2014). It is the idea that everyone should have the chance to live a healthy life as they see fit, no matter who they are.</p>
-              <p><span style={{fontWeight:`700`}}>Medically Underserved Community.</span> a group facing societal, economic, cultural, or linguistic barriers to healthcare. This includes people experiencing homelessness, migrant workers, undocumented immigrants, people with low incomes, people without health insurance, people in geographically isolated areas, gender and sexual minorities, Indigenous communities, people of color, and people with disabilities. This is an expansion of the definition of “medically underserved populations” by the US Bureau of Health Workforce (Bureau of Health Workforce 2019).</p>
-              <p><span style={{fontWeight:`700`}}>Precision Medicine.</span> Precision medicine is a budding approach to medicine and disease prevention. It uses data about a person’s genes, lifestyle, and environment to tailor health care. (Lister Hill National Center for Biome...). As such, it depends on large amounts of data from a large number of patients for analysis. Right now, the concept of precision medicine is more of an aspiration than it is a specific technique.</p>
-              <p><span style={{fontWeight:`700`}}>Ritual Communication.</span> In public health, a ritual view of communication focuses on the social structures that a communication process maintains Communication maintains social structures by outlining power dynamics, social roles, expectations, conflicts, and feedback loops. I draw on the work of James Carey, Stuart Hall, and Nancy Fraser for this definition.</p>
+              <p><span style={{fontWeight:`700`}}>Health Equity.</span> Health equity is social justice in health. It is justice in access to health opportunities for members of historically disadvantaged groups. (Source: Paula Braveman, 2014). It is the idea that everyone should have the chance to live a healthy life as they see fit, no matter who they are.</p>
+              <p><span style={{fontWeight:`700`}}>Medically Underserved Community.</span> a group facing societal, economic, cultural, or linguistic barriers to healthcare. This includes people experiencing homelessness, migrant workers, undocumented immigrants, people with low incomes, people without health insurance, people in geographically isolated areas, gender and sexual minorities, Indigenous communities, people of color, and people with disabilities. This is an expansion of the definition of “medically underserved populations” by the US Bureau of Health Workforce.</p>
+              <p><span style={{fontWeight:`700`}}>Precision Medicine.</span> Precision medicine is a budding approach to medicine and disease prevention. It uses data about a person’s genes, lifestyle, medical history, and environment to tailor health care. (Lister Hill National Center for Biome...). As such, it depends on large amounts of data from a large number of patients for analysis. Right now, the concept of precision medicine is more of an aspiration than it is a specific technique.</p>
+              <p><span style={{fontWeight:`700`}}>Ritual Communication.</span> In public health, a ritual view of communication focuses on the social structures that a communication process maintains. Public health communication maintains social structures by outlining power dynamics, social roles, expectations, conflicts, and feedback loops around health topics. (This definition draws on the work of James Carey, Stuart Hall, and Nancy Fraser.)</p>
               <p>And now, onto the show.</p>
             </div>
           </CenterRectangle>
@@ -284,17 +284,6 @@ class IndexPage extends Component {
                   this.state.isShowStarted && !this.state.isPlay01Completed && <PlayButton playid="play01" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
                 }
               </ContainerRounded>
-              <ContainerCircle bgcolor="#FEF1FB" color="black">
-                {
-                  !this.state.isPlay02Completed && <p><span role="img" aria-label="Question mark emoji" style={{ textSize: `20px` }}>❓</span><br/>Hard to reach</p>
-                }
-                {
-                  this.state.isPlay02Completed && <p style={{textDecorationColor: `red`, textDecorationLine: `line-through`, textDecorationStyle: `double`}}>Hard to reach</p>
-                }
-                { 
-                  this.state.isShowStarted && !this.state.isPlay02Completed && <PlayButton playid="play02" onClickFunction={this.handlePlayButtonClick} text="Start Play"/>
-                }
-              </ContainerCircle>
               <ContainerRectangle bgcolor="#63FF0F" color="black">
                 {
                   !this.state.isPlay03Completed && <p><span role="img" aria-label="Poop emoji" style={{ textSize: `20px` }}>👏</span><br/>A moment of appreciation for Barbara Israel</p>

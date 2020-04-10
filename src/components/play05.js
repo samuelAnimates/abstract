@@ -12,7 +12,7 @@ const Play05 = React.forwardRef((props, ref) => (
                     As part of my thesis work, I curated a zine called <a href="https://hercommunication.pubpub.org/issue-1" rel="noopener noreferrer" target='_blank'>"A People's Guide to Precision Medicine"</a>. I like to describe it as a do-it-together version of a research journal.
                 </p>
                 <p>
-                    I combined personal interviews, the outputs of design-based workshops with college students, and a few miscellaneous bits and pieces. The articles vary pretty widely. But they all speak to the impact that precision medicine and related technologies may have on health equity. I strove to get an array of underrepresented voices to give a fuller picture of this potential — for harm and for good — than I had seen in messaging from instituions like the National Institutes of Health.
+                    I combined personal interviews, the outputs of design-based workshops with college students, and a few miscellaneous bits and pieces. The articles vary pretty widely. But they all speak to the impact that precision medicine and related technologies may have on health equity. I strove to get an array of underrepresented voices to give a fuller picture of this potential — for harm and for good — than I had seen in messaging from institutions like the National Institutes of Health.
                 </p>
                 <p>
                     And now I'd like to invite one of you to pick an article for me to walk through with you.
